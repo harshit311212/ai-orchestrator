@@ -1,0 +1,117 @@
+/* Main Application Theme */
+:root {
+    --primary-bg: #0d0d12;
+    --sidebar-bg: #15151e;
+    --text-color: #e2e2ec;
+    --accent-cyan: #00f3ff;
+    --accent-purple: #9d00ff;
+    --bubble-user: #2d2d3a;
+    --bubble-ai: #1c1c28;
+    --border-color: #2b2b3a;
+}
+
+body {
+    background-color: var(--primary-bg);
+    color: var(--text-color);
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+}
+
+/* Hide Default Streamlit Elements */
+header[data-testid="stHeader"] {
+    background-color: transparent !important;
+}
+
+.stDeployButton {
+    display: none;
+}
+
+/* Sidebar Customization */
+section[data-testid="stSidebar"] {
+    background-color: var(--sidebar-bg);
+    border-right: 1px solid var(--border-color);
+}
+
+.css-1544g2n { /* Target sidebar text */
+    color: var(--text-color);
+}
+
+/* Dropdown and Select inputs */
+.stSelectbox div[data-baseweb="select"] {
+    background-color: var(--primary-bg);
+    border: 1px solid var(--accent-cyan);
+    color: var(--text-color);
+}
+
+.stSelectbox div[data-baseweb="select"]:hover {
+    border-color: var(--accent-purple);
+    box-shadow: 0 0 8px rgba(157, 0, 255, 0.4);
+}
+
+/* Chat Messages */
+.stChatMessage {
+    background-color: var(--bubble-user);
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.stChatMessage[data-testid="stChatMessage"]:nth-child(even) {
+    background-color: var(--bubble-ai);
+    border-left: 3px solid var(--accent-purple);
+}
+
+.stChatMessage[data-testid="stChatMessage"]:nth-child(odd) {
+    border-left: 3px solid var(--accent-cyan);
+}
+
+/* Buttons */
+.stButton>button {
+    background-color: transparent;
+    color: var(--accent-cyan);
+    border: 1px solid var(--accent-cyan);
+    transition: all 0.3s ease;
+    border-radius: 6px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.stButton>button:hover {
+    background-color: var(--accent-cyan);
+    color: var(--primary-bg);
+    box-shadow: 0 0 10px var(--accent-cyan);
+}
+
+/* File Uploader */
+.stFileUploader {
+    border: 1px dashed var(--accent-purple) !important;
+    background-color: rgba(157, 0, 255, 0.05) !important;
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+}
+
+/* Headings pop */
+h1, h2, h3 {
+    background: -webkit-linear-gradient(45deg, var(--accent-cyan), var(--accent-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+}
+
+markdown {
+    color: var(--text-color);
+}
+
+/* Tool Execution Badges */
+.tool-badge {
+    display: inline-block;
+    padding: 3px 8px;
+    font-size: 0.8em;
+    font-weight: bold;
+    border-radius: 12px;
+    background: var(--accent-purple);
+    color: white;
+    margin-bottom: 5px;
+    box-shadow: 0 0 5px var(--accent-purple);
+}
